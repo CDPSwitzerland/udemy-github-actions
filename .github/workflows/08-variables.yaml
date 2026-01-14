@@ -33,7 +33,8 @@ jobs:
     steps:
       - name: Print variables
         run: |
-          echo "Org var: ${{vars.ORG_VAR}}"
+          echo "job to print Organization and repo variables with var context"
+          echo "Org var : ${{vars.ORG_VAR}}"
           echo "Org Overwritten var: ${{vars.OVERWRITTEN_VAR}}"
           echo "Repo var: ${{vars.REPOSITORY_VAR}}"
   echo-prod:
@@ -42,6 +43,7 @@ jobs:
     steps: 
       - name: Print Prod variables
         run: |
+          echo "job to with explicit environment set o prod"
           echo "Org var: ${{vars.ORG_VAR}}"
           echo "Org Overwritten var: ${{vars.OVERWRITTEN_VAR}}"
           echo "Repo var: ${{vars.REPOSITORY_VAR}}"
