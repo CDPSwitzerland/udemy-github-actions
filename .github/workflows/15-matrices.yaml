@@ -32,3 +32,19 @@ jobs:
           sleep 10
       - name: Upload test results
         run: echo "uploading tests results"
+  include-example:
+    name: ${{matrix.color}}-${{matrix.shape}}-${{matrix.size}}
+    runs-on: ubunutu-latest
+    strategy:
+      matrix:
+        color: [red, green]
+        shape: [circle, square]
+        size: [small, large]
+        include:
+          - color: red
+            shape: triangle
+    steps:
+      - name: Dummy step
+        run: echo '${{matrix.color}}-${{matrix.shape}}-${{matrix.size}}'
+    
+
